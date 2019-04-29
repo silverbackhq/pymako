@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/clivern/pymako",
     packages=setuptools.find_packages(exclude=['tests', 'tests.*']),
-    install_requires=["requests", "pytz"],
+    install_requires=["requests", "pytz", "python-consul"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
