@@ -3,7 +3,7 @@ PyMako
 
 A Service Discovery and Dynamic Load Balancing Package for Python.
 
-[![Build Status](https://travis-ci.org/clivern/pymako.svg?branch=master)](https://travis-ci.org/clivern/pymako)
+[![Build Status](https://travis-ci.org/Clivern/PyMako.svg?branch=master)](https://travis-ci.org/Clivern/PyMako)
 [![PyPI version](https://badge.fury.io/py/pymako.svg)](https://badge.fury.io/py/pymako)
 
 Installation
