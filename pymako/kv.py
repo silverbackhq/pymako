@@ -1,4 +1,3 @@
-    
 """
 Consul KV Store Module
 """
@@ -6,4 +5,3 @@ Consul KV Store Module
 
 class KV():
     pass
-    

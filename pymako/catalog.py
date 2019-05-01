@@ -1,0 +1,7 @@
+"""
+Catalog
+"""
+
+
+class Catalog():
+    pass
