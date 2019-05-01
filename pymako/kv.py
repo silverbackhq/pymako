@@ -2,6 +2,10 @@
 Consul KV Store Module
 """
 
+from .client import Client
 
-class KV():
-    pass
+
+class KV(Client):
+
+    def __init__(self):
+        super().__init__()

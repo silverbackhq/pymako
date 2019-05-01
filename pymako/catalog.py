@@ -2,6 +2,10 @@
 Catalog
 """
 
+from .client import Client
 
-class Catalog():
-    pass
+
+class Catalog(Client):
+
+    def __init__(self):
+        super().__init__()
