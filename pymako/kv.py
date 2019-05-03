@@ -36,7 +36,7 @@ class KV(Client):
             return False
 
     def build_uri(self, uri, parameters={}):
-        query = urlencode(parameters)
+        query = urlencode(parameters, doseq=True)
         if query != "":
             uri += "?%s" % (query)
         return uri
