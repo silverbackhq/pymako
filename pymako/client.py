@@ -4,6 +4,7 @@ Client
 
 import requests
 from .exceptions import ConsulApiException
+from urllib.parse import urlencode
 
 
 class Client():
@@ -86,3 +87,9 @@ class Client():
             return request
         except Exception:
             raise ConsulApiException("Request Failure: status code %d response %s" % (request.status_code, request.text))
+
+    def build_uri(self, uri, parameters={}):
+        query = urlencode(parameters)
+        if query != "":
+            uri += "?%s" % (query)
+        return uri

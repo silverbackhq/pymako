@@ -3,7 +3,6 @@ Consul KV Store Module
 """
 
 from .client import Client
-from urllib.parse import urlencode
 
 
 class KV(Client):
@@ -34,9 +33,3 @@ class KV(Client):
             return True
         else:
             return False
-
-    def build_uri(self, uri, parameters={}):
-        query = urlencode(parameters, doseq=True)
-        if query != "":
-            uri += "?%s" % (query)
-        return uri
