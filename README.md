@@ -18,7 +18,14 @@ Usage
 After installing the library, Read the following usage criteria:
 
 ```python
-#
+from pymako import KV
+
+
+# KV Store Module
+kv = KV("http://127.0.0.1:8500")
+kv.get("key")
+kv.update("key", "value")
+kv.delete("key")
 ```
 
 Misc

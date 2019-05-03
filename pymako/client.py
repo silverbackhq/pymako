@@ -12,63 +12,77 @@ class Client():
     CREATED = 201
     ACCEPTED = 202
     NO_CONTENT = 204
+    __consul_url = None
+    __api_version = "v1"
 
-    def get(self, url, headers, data):
+    def __init__(self, consul_url, api_version="v1"):
+        self.__consul_url = consul_url
+        self.__api_version = api_version
+
+    def get_request(self, uri, headers, data):
         """Get Request"""
+        url = "%(base_url)s/%(version)s/%(uri)s" % {
+            "base_url": self.__consul_url.strip("/"),
+            "version": self.__api_version,
+            "uri": uri.strip("/")
+        }
         try:
             request = requests.get(
                 url,
                 headers=headers,
                 data=data
             )
-            if request.status_code == Client.OK:
-                return request.text
-            else:
-                raise ConsulApiException("Request Failure: status code %d response %s" % (request.status_code, request.text))
+            return request
         except Exception:
             raise ConsulApiException("Request Failure: status code %d response %s" % (request.status_code, request.text))
 
-    def put(self, url, headers, data):
+    def put_request(self, uri, headers, data):
         """Put Request"""
+        url = "%(base_url)s/%(version)s/%(uri)s" % {
+            "base_url": self.__consul_url.strip("/"),
+            "version": self.__api_version,
+            "uri": uri.strip("/")
+        }
         try:
-            request = requests.get(
+            request = requests.put(
                 url,
                 headers=headers,
                 data=data
             )
-            if request.status_code == Client.ACCEPTED:
-                return request.text
-            else:
-                raise ConsulApiException("Request Failure: status code %d response %s" % (request.status_code, request.text))
+            return request
         except Exception:
             raise ConsulApiException("Request Failure: status code %d response %s" % (request.status_code, request.text))
 
-    def post(self, url, headers, data):
+    def post_request(self, uri, headers, data):
         """Post Request"""
+        url = "%(base_url)s/%(version)s/%(uri)s" % {
+            "base_url": self.__consul_url.strip("/"),
+            "version": self.__api_version,
+            "uri": uri.strip("/")
+        }
         try:
-            request = requests.get(
+            request = requests.post(
                 url,
                 headers=headers,
                 data=data
             )
-            if request.status_code == Client.CREATED:
-                return request.text
-            else:
-                raise ConsulApiException("Request Failure: status code %d response %s" % (request.status_code, request.text))
+            return request
         except Exception:
             raise ConsulApiException("Request Failure: status code %d response %s" % (request.status_code, request.text))
 
-    def delete(self, url, headers, data):
+    def delete_request(self, uri, headers, data):
         """Delete Request"""
+        url = "%(base_url)s/%(version)s/%(uri)s" % {
+            "base_url": self.__consul_url.strip("/"),
+            "version": self.__api_version,
+            "uri": uri.strip("/")
+        }
         try:
-            request = requests.get(
+            request = requests.delete(
                 url,
                 headers=headers,
                 data=data
             )
-            if request.status_code == Client.NO_CONTENT:
-                return request.text
-            else:
-                raise ConsulApiException("Request Failure: status code %d response %s" % (request.status_code, request.text))
+            return request
         except Exception:
             raise ConsulApiException("Request Failure: status code %d response %s" % (request.status_code, request.text))
