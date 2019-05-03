@@ -13,9 +13,6 @@ class KV(Client):
 
     def get(self, key, parameters={}, default=""):
         uri = self.build_uri("/kv/%s" % key, parameters)
-        query = urlencode(parameters)
-        if query != "":
-            uri += "?%s" % (query)
         response = self.get_request(uri, {}, "")
         if response.status_code == Client.OK:
             return response.text
@@ -24,9 +21,6 @@ class KV(Client):
 
     def update(self, key, value, parameters={}):
         uri = self.build_uri("/kv/%s" % key, parameters)
-        query = urlencode(parameters)
-        if query != "":
-            uri += "?%s" % (query)
         response = self.put_request(uri, {}, value)
         if response.status_code == Client.OK:
             return True
