@@ -19,7 +19,10 @@ class TestKV(unittest.TestCase):
             "recurse": "true",
             "raw": "false"
         })
-        self.assertEqual(uri, "/kv/key?dc=us&recurse=true&raw=false")
+        # workaround to fix py3.5 issue with urlencode order of dict
+        self.assertTrue("dc=us" in uri)
+        self.assertTrue("recurse=true" in uri)
+        self.assertTrue("raw=false" in uri)
 
     @patch('requests.get')
     def test_get(self, mock_get):
