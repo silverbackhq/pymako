@@ -3,7 +3,7 @@ PyMako
 
 A Consul Client for Python.
 
-[![Build Status](https://travis-ci.org/Clivern/PyMako.svg?branch=master)](https://travis-ci.org/Clivern/PyMako)
+[![Build Status](https://travis-ci.org/silverbackhq/pymako.svg?branch=master)](https://travis-ci.org/silverbackhq/pymako)
 [![PyPI version](https://badge.fury.io/py/pymako.svg)](https://badge.fury.io/py/pymako)
 
 Installation
