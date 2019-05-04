@@ -48,6 +48,6 @@ Initial Release.
 Acknowledgements
 ----------------
 
-© 2019, Clivern. Released under [MIT License](https://opensource.org/licenses/mit-license.php).
+© 2019, Silverback. Released under [MIT License](https://opensource.org/licenses/mit-license.php).
 
-**PyMako** is authored and maintained by [@clivern](http://github.com/clivern).
+**PyMako** is authored and maintained by [@silverbackhq](http://github.com/silverbackhq).
