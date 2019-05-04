@@ -14,6 +14,8 @@ setuptools.setup(
     url="https://github.com/clivern/pymako",
     packages=setuptools.find_packages(exclude=['tests', 'tests.*']),
     install_requires=["requests"],
+    license="MIT",
+    platforms=['any'],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
