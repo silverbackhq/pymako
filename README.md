@@ -40,6 +40,11 @@ Misc
 Changelog
 ---------
 
+Version 0.0.2:
+```
+Status & KV Module.
+```
+
 Version 0.0.1:
 ```
 Initial Release.
